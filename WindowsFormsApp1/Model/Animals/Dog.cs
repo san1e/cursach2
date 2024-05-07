@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.Animals
 
         public override string ToString()
         {
-            return $"Dog: {base.ToString()}, Breed: {Breed}";
+            return $"Dog: {base.ToString()}";
         }
     }
 }

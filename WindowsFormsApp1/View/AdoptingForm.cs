@@ -10,49 +10,41 @@ using System.Windows.Forms;
 using WindowsFormsApp1.Animals;
 using WindowsFormsApp1.Controller;
 using WindowsFormsApp1.Model;
+using WindowsFormsApp1.View;
 
 namespace WindowsFormsApp1
 {
     public partial class AdoptingForm : Form
     {
         public  ShelterController shelterController;
-        public AdoptingForm()
+        public AdoptingForm(string UserType)
         {
             InitializeComponent();
             shelterController = new ShelterController(new ShelterModel());
             CategoriesCmb.SelectedIndex = 0;
             GenderCmb.SelectedIndex = 0;
             AgesCmb.SelectedIndex = 0;
-            UpdateAnimalsList();
-        }
-
-        private void UpdateAnimalsList()
-        {
-            AnimalsList.Items.Clear(); // Clear existing items before adding new ones
-
-            // Get the list of animals from the shelter controller
-            List<Animal> animals = shelterController.shelter.Animals;
-
-            // Add each animal's information to the list box
-            foreach (Animal animal in animals)
+            UpdateTotalDonation();
+            if (UserType=="Admin")
             {
-                string displayText;
-                if (animal is Cat)
-                {
-                    displayText = animal.ToString() ;
-                }
-                else if (animal is Dog)
-                {
-                     displayText = animal.ToString();
-                }
-                else
-                {
-                    displayText = animal.ToString(); // Handle other animal types (if applicable)
-                }
-                AnimalsList.Items.Add(displayText);
+                AdminStyle();
             }
         }
 
+        public void AdminStyle()
+        {
+            AddBtn.Visible = true;
+
+        }
+
+        private void UpdateTotalDonation()
+        {
+            // Get the total donation amount from the shelter controller's model
+            decimal totalDonation = shelterController.shelter.TotalDonation;
+
+            // Update the label text to display the total donation amount
+            TotalDonationLabel.Text = $"Total Donated: {totalDonation:C}";
+        }
         private void UpdateAnimalList()
         {
             AnimalsList.Items.Clear();
@@ -114,6 +106,72 @@ namespace WindowsFormsApp1
         private void AdoptingForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void AdoptBtn_Click(object sender, EventArgs e)
+        {
+            if (AnimalsList.SelectedIndex >=0)
+            {
+                // Get the selected animal's index
+                int selectedIndex = AnimalsList.SelectedIndex;
+
+                // Get the selected animal from the shelter controller's list of animals
+                Animal selectedAnimal = shelterController.Animals[selectedIndex];
+
+                // Remove the selected animal from the shelter controller
+                shelterController.RemoveAnimal(selectedAnimal);
+
+                // Remove the selected animal from the list box
+                AnimalsList.Items.RemoveAt(selectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Please select an animal to adopt.");
+            }
+
+        }
+
+        private void DonateBtn_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the DonationForm
+            DonationForm donateForm = new DonationForm();
+
+            // Show the form as a dialog to get the donation information from the user
+            DialogResult result = donateForm.ShowDialog();
+
+            // Check if the user clicked the OK button on the donation form
+            if (result == DialogResult.OK)
+            {
+                // Retrieve donation information from the donation form
+                decimal amount = donateForm.Amount;
+                string description = donateForm.Description;
+
+                // Add the donation as an expense to the shelter controller
+                shelterController.AddExpense(description, amount);
+
+                // Update the total donation display
+                UpdateTotalDonation();
+            }
+        }
+
+        private void MoreInfo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int selectedIndex = AnimalsList.SelectedIndex;
+                Animal selectedAnimal = shelterController.Animals[selectedIndex];
+                shelterController.GetMoreInformation(selectedAnimal);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Please select an animal to get more information.");
+            }
+        }
+
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+           // shelterController.AddAnimal();
         }
     }
 }

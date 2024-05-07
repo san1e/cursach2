@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace WindowsFormsApp1.View
 {
-    partial class SponsorForm
+    partial class Lost_Found
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // SponsorForm
+            // Lost_Found
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "SponsorForm";
-            this.Text = "SponsorForm";
-            this.Load += new System.EventHandler(this.SponsorForm_Load);
+            this.Name = "Lost_Found";
+            this.Text = "Lost_Found";
+            this.Load += new System.EventHandler(this.Lost_Found_Load);
             this.ResumeLayout(false);
 
         }

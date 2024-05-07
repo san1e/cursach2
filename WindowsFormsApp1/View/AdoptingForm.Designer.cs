@@ -35,6 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.GenderCmb = new System.Windows.Forms.ComboBox();
             this.AnimalsList = new System.Windows.Forms.ListBox();
+            this.AdoptBtn = new System.Windows.Forms.Button();
+            this.DonateBtn = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.TotalDonationLabel = new System.Windows.Forms.Label();
+            this.AddBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -114,11 +119,66 @@
             this.AnimalsList.Size = new System.Drawing.Size(706, 251);
             this.AnimalsList.TabIndex = 7;
             // 
+            // AdoptBtn
+            // 
+            this.AdoptBtn.Location = new System.Drawing.Point(139, 304);
+            this.AdoptBtn.Name = "AdoptBtn";
+            this.AdoptBtn.Size = new System.Drawing.Size(116, 30);
+            this.AdoptBtn.TabIndex = 8;
+            this.AdoptBtn.Text = "Adopt";
+            this.AdoptBtn.UseVisualStyleBackColor = true;
+            this.AdoptBtn.Click += new System.EventHandler(this.AdoptBtn_Click);
+            // 
+            // DonateBtn
+            // 
+            this.DonateBtn.Location = new System.Drawing.Point(261, 305);
+            this.DonateBtn.Name = "DonateBtn";
+            this.DonateBtn.Size = new System.Drawing.Size(116, 30);
+            this.DonateBtn.TabIndex = 9;
+            this.DonateBtn.Text = "Donate";
+            this.DonateBtn.UseVisualStyleBackColor = true;
+            this.DonateBtn.Click += new System.EventHandler(this.DonateBtn_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(383, 305);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(116, 30);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "MoreInformation";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.MoreInfo_Click);
+            // 
+            // TotalDonationLabel
+            // 
+            this.TotalDonationLabel.AutoSize = true;
+            this.TotalDonationLabel.Location = new System.Drawing.Point(505, 314);
+            this.TotalDonationLabel.Name = "TotalDonationLabel";
+            this.TotalDonationLabel.Size = new System.Drawing.Size(103, 13);
+            this.TotalDonationLabel.TabIndex = 12;
+            this.TotalDonationLabel.Text = " TotalDonationLabel";
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Location = new System.Drawing.Point(17, 304);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Size = new System.Drawing.Size(116, 30);
+            this.AddBtn.TabIndex = 13;
+            this.AddBtn.Text = "Add";
+            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Visible = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
+            // 
             // AdoptingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 771);
+            this.ClientSize = new System.Drawing.Size(737, 355);
+            this.Controls.Add(this.AddBtn);
+            this.Controls.Add(this.TotalDonationLabel);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.DonateBtn);
+            this.Controls.Add(this.AdoptBtn);
             this.Controls.Add(this.AnimalsList);
             this.Controls.Add(this.GenderCmb);
             this.Controls.Add(this.label3);
@@ -143,5 +203,10 @@
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox GenderCmb;
         public System.Windows.Forms.ListBox AnimalsList;
+        private System.Windows.Forms.Button AdoptBtn;
+        private System.Windows.Forms.Button DonateBtn;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label TotalDonationLabel;
+        private System.Windows.Forms.Button AddBtn;
     }
 }

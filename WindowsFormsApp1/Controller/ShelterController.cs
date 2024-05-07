@@ -23,12 +23,12 @@ namespace WindowsFormsApp1.Controller
         {
             get { return shelter.Animals; }
         }
-        public void AddAnimal(object sender, EventArgs e, Animal animal)
+        public void AddAnimal(Animal animal)
         {
             shelter.AddAnimal(animal);
         }
 
-        public void RemoveAnimal(object sender, EventArgs e, Animal animal)
+        public void RemoveAnimal(Animal animal)
         {
             shelter.RemoveAnimal(animal);
         }
@@ -41,6 +41,11 @@ namespace WindowsFormsApp1.Controller
         public void RemoveExpense(Expense expense)
         {
             shelter.RemoveExpense(expense);
+        }
+
+        public void GetMoreInformation(Animal animal)
+        {
+            shelter.MoreInformation(animal);
         }
 
     }

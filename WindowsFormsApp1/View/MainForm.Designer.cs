@@ -51,6 +51,7 @@
             this.LostBtn.TabIndex = 1;
             this.LostBtn.Text = "Lost & Found";
             this.LostBtn.UseVisualStyleBackColor = true;
+            this.LostBtn.Click += new System.EventHandler(this.LostBtn_Click);
             // 
             // label1
             // 

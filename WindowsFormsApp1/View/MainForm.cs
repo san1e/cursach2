@@ -9,16 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Controller;
 using WindowsFormsApp1.Model;
+using WindowsFormsApp1.View;
 
 namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
-        
-        public MainForm(bool isUser)
+        private string userType;
+        public MainForm(string typeUser)
         {
             InitializeComponent();
-            
+            if (typeUser == "Admin")
+            {
+                label1.Visible = false;
+                AdobtBtn.Location = new Point(100, 40);
+                LostBtn.Location = new Point(450, 40);
+                this.Size = new Size(816, 150);
+                userType = typeUser;
+            }
 
         }
 
@@ -29,13 +37,19 @@ namespace WindowsFormsApp1
 
         private void AdobtBtn_Click(object sender, EventArgs e)
         {
-            Form adopt = new AdoptingForm();
+            Form adopt = new AdoptingForm(userType);
             adopt.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LostBtn_Click(object sender, EventArgs e)
+        {
+            Form lost_found = new Lost_Found();
+            lost_found.ShowDialog();
         }
     }
 }
