@@ -13,12 +13,15 @@ namespace WindowsFormsApp1.Animals
         public string Gender { get;set; }
         public AnimalType Type { get; protected set; }
 
-        protected Animal(string name, double age, string gender, AnimalType type)
+        public string PhotoLocate { get; set; }
+
+        protected Animal(string name, double age, string gender, AnimalType type, string photoLocate)
         {
             Name = name;
             Age = age;
             Gender = gender;
             Type = type;
+            PhotoLocate = photoLocate;
         }
 
         public virtual void DoSmth()

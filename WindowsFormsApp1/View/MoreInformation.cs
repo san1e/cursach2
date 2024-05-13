@@ -21,11 +21,12 @@ namespace WindowsFormsApp1.View
             AgeLbl.Text = $"Age: {animal.Age}";
             GenderLbl.Text = $"Gender: {animal.Gender}";
 
+            pictureBox1.ImageLocation ="C:/";
+
         }
 
         private void MoreInformation_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

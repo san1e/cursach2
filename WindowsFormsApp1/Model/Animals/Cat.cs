@@ -8,8 +8,8 @@ namespace WindowsFormsApp1.Animals
 {
     internal class Cat:Animal
     {
-        public Cat(string name, double age,string Gender)
-       : base(name, age, Gender, AnimalType.Cats)
+        public Cat(string name, double age,string Gender, string photolocate)
+       : base(name, age, Gender, AnimalType.Cats,photolocate)
         {
            
         }

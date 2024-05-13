@@ -147,7 +147,9 @@
             this.Controls.Add(this.Age);
             this.Controls.Add(this.Name);
             this.Controls.Add(this.AnimalType);
+            this.Name = "AddForm";
             this.Text = "AddForm";
+            this.Load += new System.EventHandler(this.AddForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

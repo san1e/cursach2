@@ -10,8 +10,8 @@ namespace WindowsFormsApp1.Animals
     {
         public string Breed { get; private set; }
 
-        public Dog(string Name, double Age,string Gender, string breed)
-            : base(Name,Age,Gender, AnimalType.Dogs)
+        public Dog(string Name, double Age,string Gender, string breed,string photolocate)
+            : base(Name,Age,Gender, AnimalType.Dogs,photolocate)
         {
             Breed = breed;
         }

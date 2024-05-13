@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.Animals
 {
     internal class Hamster:Animal
     {
-        public Hamster(string name, double age, string Gender) : base(name, age, Gender, AnimalType.Hamsters)
+        public Hamster(string name, double age, string Gender, string photolocate) : base(name, age, Gender, AnimalType.Hamsters, photolocate)
         {
 
         }

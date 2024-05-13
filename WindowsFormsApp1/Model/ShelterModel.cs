@@ -47,42 +47,7 @@ namespace WindowsFormsApp1.Model
             Expenses.Remove(expense);
         }
 
-        //public void FilterAnimals(string category, string gender, string ageCategory)
-        //{
-        //    var filteredAnimals = Animals
-        //        .Where(a => (category == "All" ||
-        //                     (a is Cat && category == "Cats") ||
-        //                     (a is Dog && category == "Dogs") ||
-        //                     (a is Hamster && category == "Hamsters") ||
-        //                     (!(a is Cat) && !(a is Dog) && !(a is Hamster) && category == "Others")))
-        //        .Where(a => gender == "All" || a.Gender == gender)
-        //        .Where(a => AgeFilter(a, ageCategory));
-
-        //    // Очищаем список и добавляем отфильтрованных животных
-        //    new AdoptingForm().AnimalsList.Items.Clear();
-        //    foreach (Animal animal in filteredAnimals)
-        //    {
-        //        new AdoptingForm().AnimalsList.Items.Add(animal.ToString());
-        //    }
-        //}
-
-        //private bool AgeFilter(Animal animal, string ageCategory)
-        //{
-        //    switch (ageCategory)
-        //    {
-        //        case "All":
-        //            return true;
-        //        case "Adult":
-        //            return animal.Age >= 2 && animal.Age < 7;
-        //        case "Kitten/Puppy":
-        //            return animal.Age < 2;
-        //        case "Senior":
-        //            return animal.Age >= 7;
-        //        default:
-        //            return true;
-        //    }
-        //}
-
+        
 
         public void MoreInformation(Animal animal)
         {

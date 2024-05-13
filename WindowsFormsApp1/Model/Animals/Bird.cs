@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.Animals
 {
     internal class Bird:Animal
     {
-        public Bird(string name, double age, string Gender) : base(name, age, Gender, AnimalType.Others)
+        public Bird(string name, double age, string Gender, string photolocate) : base(name, age, Gender, AnimalType.Others,photolocate)
         {
 
         }

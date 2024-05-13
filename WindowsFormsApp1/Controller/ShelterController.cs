@@ -15,9 +15,9 @@ namespace WindowsFormsApp1.Controller
         public ShelterController(ShelterModel shelter)
         {
             this.shelter = shelter;
-            shelter.Animals.Add(new Dog("Sem", 3, "Male", "French"));
-            shelter.Animals.Add(new Cat("Boni", 1, "Female"));
-            shelter.Animals.Add(new Bird("Kesha", 0.4, "Female"));
+            shelter.Animals.Add(new Dog("Sem", 3, "Male", "French",""));
+            shelter.Animals.Add(new Cat("Boni", 1, "Female",""));
+            shelter.Animals.Add(new Bird("Kesha", 0.4, "Female",""));
         }
         public List<Animal> Animals
         {

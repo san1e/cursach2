@@ -23,5 +23,10 @@ namespace WindowsFormsApp1.View
         private void BrowseBtn_Click(object sender, EventArgs e)
         {
         }
+
+        private void AddForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
