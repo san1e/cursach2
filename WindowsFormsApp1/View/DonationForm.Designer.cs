@@ -89,6 +89,7 @@
             this.Controls.Add(this.AmountTxt);
             this.Name = "DonationForm";
             this.Text = "DonationForm";
+            this.Load += new System.EventHandler(this.DonationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -38,5 +38,10 @@ namespace WindowsFormsApp1.View
                 MessageBox.Show("Please enter a valid amount."); // Display error message
             }
         }
+
+        private void DonationForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

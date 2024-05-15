@@ -12,7 +12,7 @@ namespace WindowsFormsApp1.Animals
         {
 
         }
-
+        
         public override string ToString()
         {
             return $"Bird: {base.ToString()}";

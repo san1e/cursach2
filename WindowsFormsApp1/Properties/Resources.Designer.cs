@@ -59,45 +59,5 @@ namespace WindowsFormsApp1.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _0241228fbda2846acac9d26eff4dadf7 {
-            get {
-                object obj = ResourceManager.GetObject("0241228fbda2846acac9d26eff4dadf7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1a989fdeb54d8a7ba2f412d67f73c8ef {
-            get {
-                object obj = ResourceManager.GetObject("1a989fdeb54d8a7ba2f412d67f73c8ef", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap a24ff178114bfea305dcb229f4d85c58 {
-            get {
-                object obj = ResourceManager.GetObject("a24ff178114bfea305dcb229f4d85c58", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap e46a1071bb07f7089ffdc276c4809287 {
-            get {
-                object obj = ResourceManager.GetObject("e46a1071bb07f7089ffdc276c4809287", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

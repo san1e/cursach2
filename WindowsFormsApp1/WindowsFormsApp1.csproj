@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Model\Animals\AnimalType.cs" />
     <Compile Include="Model\Animals\Hamster.cs" />
+    <Compile Include="Model\Animals\ITrainable.cs" />
     <Compile Include="Model\Expense.cs" />
     <Compile Include="View\AddForm.cs">
       <SubType>Form</SubType>
@@ -78,18 +79,6 @@
     <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Lost_Found.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Lost_Found.Designer.cs">
-      <DependentUpon>Lost_Found.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\ShelterModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,12 +99,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Lost_Found.resx">
-      <DependentUpon>Lost_Found.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,16 +128,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DogsPhoto\1a989fdeb54d8a7ba2f412d67f73c8ef.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DogsPhoto\0241228fbda2846acac9d26eff4dadf7.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DogsPhoto\a24ff178114bfea305dcb229f4d85c58.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DogsPhoto\e46a1071bb07f7089ffdc276c4809287.jpg" />
+    <Folder Include="DogsPhoto\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

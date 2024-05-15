@@ -59,13 +59,13 @@ namespace WindowsFormsApp1
                                 isAuthorized = true;
                                 if (role == "USER")
                                 {
-                                    MainForm mainForm = new MainForm("User");
-                                    mainForm.Show();
+                                    AdoptingForm adoptForm = new AdoptingForm("User");
+                                    adoptForm.Show();
                                 }
                                 else if (role == "ADMIN")
                                 {
-                                    MainForm mainForm = new MainForm("Admin");
-                                    mainForm.Show();
+                                    AdoptingForm adoptForm = new AdoptingForm("Admin");
+                                    adoptForm.Show();
                                 }
                                 break;
                             }

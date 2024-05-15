@@ -31,13 +31,18 @@
             this.AnimalType = new System.Windows.Forms.ComboBox();
             this.Name = new System.Windows.Forms.TextBox();
             this.Age = new System.Windows.Forms.TextBox();
-            this.Gender = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.BrowseBtn = new System.Windows.Forms.Button();
+            this.GenderCmb = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BreedTxt = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // AnimalType
@@ -66,13 +71,6 @@
             this.Age.Name = "Age";
             this.Age.Size = new System.Drawing.Size(100, 20);
             this.Age.TabIndex = 2;
-            // 
-            // Gender
-            // 
-            this.Gender.Location = new System.Drawing.Point(295, 153);
-            this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(100, 20);
-            this.Gender.TabIndex = 3;
             // 
             // label1
             // 
@@ -132,24 +130,74 @@
             this.BrowseBtn.UseVisualStyleBackColor = true;
             this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
             // 
+            // GenderCmb
+            // 
+            this.GenderCmb.FormattingEnabled = true;
+            this.GenderCmb.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.GenderCmb.Location = new System.Drawing.Point(295, 156);
+            this.GenderCmb.Name = "GenderCmb";
+            this.GenderCmb.Size = new System.Drawing.Size(121, 21);
+            this.GenderCmb.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(295, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Add";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(245, 192);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Breed:";
+            // 
+            // BreedTxt
+            // 
+            this.BreedTxt.Location = new System.Drawing.Point(295, 189);
+            this.BreedTxt.Name = "BreedTxt";
+            this.BreedTxt.Size = new System.Drawing.Size(100, 20);
+            this.BreedTxt.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(212, 243);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // AddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 450);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BreedTxt);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.GenderCmb);
             this.Controls.Add(this.BrowseBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Gender);
             this.Controls.Add(this.Age);
             this.Controls.Add(this.Name);
             this.Controls.Add(this.AnimalType);
-            this.Name = "AddForm";
             this.Text = "AddForm";
             this.Load += new System.EventHandler(this.AddForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,12 +208,16 @@
         private System.Windows.Forms.ComboBox AnimalType;
         private System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.TextBox Age;
-        private System.Windows.Forms.TextBox Gender;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button BrowseBtn;
+        private System.Windows.Forms.ComboBox GenderCmb;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox BreedTxt;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

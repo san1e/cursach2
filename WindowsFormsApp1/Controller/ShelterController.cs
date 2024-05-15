@@ -15,9 +15,15 @@ namespace WindowsFormsApp1.Controller
         public ShelterController(ShelterModel shelter)
         {
             this.shelter = shelter;
-            shelter.Animals.Add(new Dog("Sem", 3, "Male", "French",""));
-            shelter.Animals.Add(new Cat("Boni", 1, "Female",""));
-            shelter.Animals.Add(new Bird("Kesha", 0.4, "Female",""));
+            shelter.LoadAnimalsFromFile();
+            if (shelter.Animals.Count == 0)
+            {
+                shelter.Animals.Add(new Dog("Sem", 3, "Male", "French", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\DogsPhoto\\1.jpg"));
+                shelter.Animals.Add(new Cat("Boni", 1, "Female", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\CatsPhoto\\1.png"));
+                shelter.Animals.Add(new Bird("Kesha", 0.4, "Female",""));
+            }
+            
+           
         }
         public List<Animal> Animals
         {
@@ -26,11 +32,13 @@ namespace WindowsFormsApp1.Controller
         public void AddAnimal(Animal animal)
         {
             shelter.AddAnimal(animal);
+            shelter.SaveAnimalsToFile();
         }
 
         public void RemoveAnimal(Animal animal)
         {
             shelter.RemoveAnimal(animal);
+            shelter.SaveAnimalsToFile();
         }
 
         public void AddExpense(string description, decimal amount)

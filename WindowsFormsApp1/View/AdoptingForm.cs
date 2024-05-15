@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 {
     public partial class AdoptingForm : Form
     {
-        public  ShelterController shelterController;
+        public ShelterController shelterController;
         public AdoptingForm(string UserType)
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
             GenderCmb.SelectedIndex = 0;
             AgesCmb.SelectedIndex = 0;
             UpdateTotalDonation();
-            if (UserType=="Admin")
+            if (UserType == "Admin")
             {
                 AdminStyle();
             }
@@ -34,6 +34,9 @@ namespace WindowsFormsApp1
         public void AdminStyle()
         {
             AddBtn.Visible = true;
+            AdoptBtn.Text = "Remove";
+            DonateBtn.Text = "Donate Info";
+
 
         }
 
@@ -110,7 +113,7 @@ namespace WindowsFormsApp1
 
         private void AdoptBtn_Click(object sender, EventArgs e)
         {
-            if (AnimalsList.SelectedIndex >=0)
+            if (AnimalsList.SelectedIndex >= 0)
             {
                 // Get the selected animal's index
                 int selectedIndex = AnimalsList.SelectedIndex;
@@ -171,7 +174,16 @@ namespace WindowsFormsApp1
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-           // shelterController.AddAnimal();
+            AddForm addForm = new AddForm();
+
+            // 2. Передайте посилання на ShelterController до AddForm
+            addForm.ShelterController = this.shelterController;
+
+            // 3. Відкрийте AddForm як діалог 
+            addForm.ShowDialog();
+
+            // 4. Оновіть список тварин після закриття AddForm
+            UpdateAnimalList();
         }
     }
 }

@@ -3,7 +3,7 @@
   <Class Name="WindowsFormsApp1.Animals.Animal">
     <Position X="8.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACEAEAEAAQAAAAAAAAAAQAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAEAAAAACEIEAEAAQAAAAAAAAAgQAAAAAAAAA=</HashCode>
       <FileName>Model\Animals\Animal.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -24,9 +24,10 @@
   <Class Name="WindowsFormsApp1.Animals.Dog">
     <Position X="9.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Model\Animals\Dog.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="WindowsFormsApp1.Animals.Hamster">
     <Position X="6.25" Y="5.25" Width="1.5" />
@@ -45,7 +46,7 @@
   <Class Name="WindowsFormsApp1.Model.ShelterModel">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAAABAQAAAEAAAAAAAAAYAEAgAABAA=</HashCode>
+      <HashCode>AAAAAAAAAAAIAAAAABAQAAAkAAAAAQAgAYAEAgAAJAA=</HashCode>
       <FileName>Model\ShelterModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +60,7 @@
   <Class Name="WindowsFormsApp1.View.AddForm">
     <Position X="9.25" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABQAAAACAAAJCAAECAAAQCAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <HashCode>ACABQAAAACAAAJAACECAAAQCAAAIAAAAEEAQAAFAAAA=</HashCode>
       <FileName>View\AddForm.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,7 +74,7 @@
   <Class Name="WindowsFormsApp1.View.DonationForm">
     <Position X="11" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAQACgggBAAAACAAACCAAAAAAAAAAAAAACEAAA=</HashCode>
+      <HashCode>AAAAAAAQACgggBEAAACAAACCAAAAAAAAAAAAAACEAAA=</HashCode>
       <FileName>View\DonationForm.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -84,24 +85,10 @@
       <FileName>View\LoginForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WindowsFormsApp1.View.Lost_Found">
-    <Position X="7.5" Y="7.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAACAAACCAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>View\Lost_Found.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="WindowsFormsApp1.MainForm">
-    <Position X="2.25" Y="7.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAQAACAAABAAAACAUAACAAIAAEAAAAgACAAAAAA=</HashCode>
-      <FileName>View\MainForm.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="WindowsFormsApp1.View.MoreInformation">
     <Position X="5.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAACAAAAgAAACAAAACAAAABAAAAAAAAABBAAE=</HashCode>
+      <HashCode>AAAAIAAAACAAAEgAAACAAAACAAAABAAAAAAAQABBAAE=</HashCode>
       <FileName>View\MoreInformation.cs</FileName>
     </TypeIdentifier>
   </Class>

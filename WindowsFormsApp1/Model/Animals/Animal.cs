@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Animals
 {
@@ -23,10 +24,19 @@ namespace WindowsFormsApp1.Animals
             Type = type;
             PhotoLocate = photoLocate;
         }
-
-        public virtual void DoSmth()
+        public virtual string GetDescription()
         {
+            return $"This is a {Gender} {Type} named {Name}, {Age} years old.";
+        }
 
+        public virtual void Eat()
+        {
+           MessageBox.Show($"{Name} is eating.");
+        }
+
+        public virtual void Play()
+        {
+            MessageBox.Show($"{Name} is playing.");
         }
 
         public override string ToString()
