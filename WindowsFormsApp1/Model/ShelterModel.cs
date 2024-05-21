@@ -1,4 +1,5 @@
-﻿using System;
+﻿// ShelterModel.cs
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ using WindowsFormsApp1.Animals;
 using WindowsFormsApp1.View;
 
 using System.IO;
+using WindowsFormsApp1.Controller;
 
 namespace WindowsFormsApp1.Model
 {
@@ -16,12 +18,16 @@ namespace WindowsFormsApp1.Model
     {
         public List<Animal> Animals { get; set; }
         private const string AnimalsFileName = "animals.txt";
+        private const string DonationsFileName = "donations.txt";
         public List<Expense> Expenses { get; set; }
-        public decimal TotalDonation { get; private set; }
-        public ShelterModel()
+        public decimal TotalDonation { get; set; }
+        public ShelterController shelterController { get; private set; }
+
+        public ShelterModel(ShelterController shelterController)
         {
             Animals = new List<Animal>();
             Expenses = new List<Expense>();
+            this.shelterController = shelterController;
         }
 
         public void LoadAnimalsFromFile()
@@ -45,30 +51,32 @@ namespace WindowsFormsApp1.Model
             foreach (string line in lines)
             {
                 string[] parts = line.Split(',');
-                if (parts.Length >= 5) // Переконайтеся, що дані достатньо
+                if (parts.Length >= 6) // Переконайтеся, що дані достатньо
                 {
                     string type = parts[0].Trim();
-                    string name = parts[1].Trim();
+                    Guid id;
+                    if (!Guid.TryParse(parts[1].Trim(), out id)) { continue; }
+                    string name = parts[2].Trim();
                     double age;
-                    if (!double.TryParse(parts[2].Trim(), out age)) { continue; }
-                    string gender = parts[3].Trim();
-                    string photoLocate = parts[4].Trim();
-                    string breed = parts.Length > 5 ? parts[5].Trim() : ""; // Порода для собак
+                    if (!double.TryParse(parts[3].Trim(), out age)) { continue; }
+                    string gender = parts[4].Trim();
+                    string photoLocate = parts[5].Trim();
+                    string breed = parts.Length > 6 ? parts[6].Trim() : ""; // Порода для собак
 
                     Animal animal;
                     switch (type)
                     {
                         case "Cat":
-                            animal = new Cat(name, age, gender, photoLocate);
+                            animal = new Cat(name, age, gender, photoLocate, id);
                             break;
                         case "Dog":
-                            animal = new Dog(name, age, gender, breed, photoLocate);
+                            animal = new Dog(name, age, gender, breed, photoLocate, id);
                             break;
                         case "Hamster":
-                            animal = new Hamster(name, age, gender, photoLocate);
+                            animal = new Hamster(name, age, gender, photoLocate, id);
                             break;
                         case "Bird":
-                            animal = new Bird(name, age, gender, photoLocate);
+                            animal = new Bird(name, age, gender, photoLocate, id);
                             break;
                         default:
                             continue; // Пропустити невідомий тип
@@ -87,7 +95,7 @@ namespace WindowsFormsApp1.Model
 
             foreach (Animal animal in animals)
             {
-                string line = $"{animal.GetType().Name},{animal.Name},{animal.Age},{animal.Gender},{animal.PhotoLocate}";
+                string line = $"{animal.GetType().Name},{animal.Id},{animal.Name},{animal.Age},{animal.Gender},{animal.PhotoLocate}";
                 if (animal is Dog dog)
                 {
                     line += $",{dog.Breed}";
@@ -114,22 +122,44 @@ namespace WindowsFormsApp1.Model
             Animals.Remove(animal);
         }
 
-        public void AddExpense(string description, decimal amount)
+        public void AddExpense(string description, decimal amount, string donorName) // Добавлен параметр donorName
         {
-            Expenses.Add(new Expense { Description = description, Amount = amount });
+            Expenses.Add(new Expense(description, amount, donorName)); // Используем новый конструктор
             AddDonation(amount);
         }
+        public void LoadDonationsFromFile()
+        {
+            if (File.Exists(DonationsFileName))
+            {
+                foreach (string line in File.ReadAllLines(DonationsFileName))
+                {
+                    string[] parts = line.Split(',');
+                    if (parts.Length == 3)
+                    {
+                        Expenses.Add(new Expense(parts[2].Trim(), decimal.Parse(parts[1].Trim()), parts[0].Trim()));
+                        TotalDonation += decimal.Parse(parts[1].Trim());
+                    }
+                }
+            }
+        }
 
+        public void SaveDonationsToFile(string username, decimal amount, string description)
+        {
+            using (StreamWriter writer = File.AppendText(DonationsFileName))
+            {
+                writer.WriteLine($"{username},{amount},{description}");
+            }
+        }
         public void RemoveExpense(Expense expense)
         {
             Expenses.Remove(expense);
         }
 
-        
+
 
         public void MoreInformation(Animal animal)
         {
-            Form MoreInfo = new MoreInformation(animal);
+            Form MoreInfo = new MoreInformation(shelterController, animal);
             MoreInfo.ShowDialog();
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿// AddForm.cs
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +47,7 @@ namespace WindowsFormsApp1.View
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.ImageLocation = SelectedImagePath;
             label1.Visible = false;
-            
+
         }
 
         private void AddForm_Load(object sender, EventArgs e)
@@ -72,16 +73,17 @@ namespace WindowsFormsApp1.View
             switch (type)
             {
                 case "Cats":
-                    newAnimal = new Cat(name, age, gender, SelectedImagePath);
+                    // НЕ генерируем новый ID, а используем уже существующий
+                    newAnimal = new Cat(name, age, gender, SelectedImagePath, Guid.NewGuid());
                     break;
                 case "Dogs":
-                    newAnimal = new Dog(name, age, gender, breed, SelectedImagePath);
+                    newAnimal = new Dog(name, age, gender, breed, SelectedImagePath, Guid.NewGuid());
                     break;
                 case "Hamsters":
-                    newAnimal = new Hamster(name, age, gender, SelectedImagePath);
+                    newAnimal = new Hamster(name, age, gender, SelectedImagePath, Guid.NewGuid());
                     break;
                 case "Others":
-                    newAnimal = new Bird(name, age, gender, SelectedImagePath);
+                    newAnimal = new Bird(name, age, gender, SelectedImagePath, Guid.NewGuid());
                     break;
                 default:
                     MessageBox.Show("Please select a valid animal type.");

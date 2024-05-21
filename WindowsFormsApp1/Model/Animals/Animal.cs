@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model.Animals;
 
 namespace WindowsFormsApp1.Animals
 {
-    public abstract class Animal
+    public abstract class Animal: IIdentifiable
     {
+        public Guid Id { get; private set; }
         public string Name { get; set; }
         public double Age { get; set; }
         public string Gender { get;set; }
@@ -16,18 +18,20 @@ namespace WindowsFormsApp1.Animals
 
         public string PhotoLocate { get; set; }
 
-        protected Animal(string name, double age, string gender, AnimalType type, string photoLocate)
+        protected Animal(string name, double age, string gender, AnimalType type, string photoLocate, Guid id)
         {
             Name = name;
             Age = age;
             Gender = gender;
             Type = type;
             PhotoLocate = photoLocate;
+            Id = id;
         }
         public virtual string GetDescription()
         {
             return $"This is a {Gender} {Type} named {Name}, {Age} years old.";
         }
+
 
         public virtual void Eat()
         {

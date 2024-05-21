@@ -36,7 +36,9 @@
             this.Desc = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.CommandBtn = new System.Windows.Forms.Button();
+            this.IdLbl = new System.Windows.Forms.Label();
+            this.CommandCmb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +104,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -111,22 +114,43 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Feed";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // CommandBtn
             // 
-            this.button3.Location = new System.Drawing.Point(73, 274);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Command";
-            this.button3.UseVisualStyleBackColor = true;
+            this.CommandBtn.Location = new System.Drawing.Point(73, 274);
+            this.CommandBtn.Name = "CommandBtn";
+            this.CommandBtn.Size = new System.Drawing.Size(90, 23);
+            this.CommandBtn.TabIndex = 8;
+            this.CommandBtn.Text = "Command";
+            this.CommandBtn.UseVisualStyleBackColor = true;
+            this.CommandBtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // IdLbl
+            // 
+            this.IdLbl.AutoSize = true;
+            this.IdLbl.Location = new System.Drawing.Point(15, 9);
+            this.IdLbl.Name = "IdLbl";
+            this.IdLbl.Size = new System.Drawing.Size(35, 13);
+            this.IdLbl.TabIndex = 9;
+            this.IdLbl.Text = "label1";
+            // 
+            // CommandCmb
+            // 
+            this.CommandCmb.FormattingEnabled = true;
+            this.CommandCmb.Location = new System.Drawing.Point(76, 300);
+            this.CommandCmb.Name = "CommandCmb";
+            this.CommandCmb.Size = new System.Drawing.Size(86, 21);
+            this.CommandCmb.TabIndex = 10;
             // 
             // MoreInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 328);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(404, 365);
+            this.Controls.Add(this.CommandCmb);
+            this.Controls.Add(this.IdLbl);
+            this.Controls.Add(this.CommandBtn);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Desc);
@@ -154,6 +178,8 @@
         private System.Windows.Forms.Label Desc;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button CommandBtn;
+        private System.Windows.Forms.Label IdLbl;
+        private System.Windows.Forms.ComboBox CommandCmb;
     }
 }

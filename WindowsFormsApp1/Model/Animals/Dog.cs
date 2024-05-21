@@ -8,12 +8,12 @@ using WindowsFormsApp1.Model.Animals;
 
 namespace WindowsFormsApp1.Animals
 {
-    internal class Dog:Animal,ITrainable
+    internal class Dog:Animal,ITrainable, IIdentifiable
     {
         public string Breed { get; private set; }
 
-        public Dog(string Name, double Age,string Gender, string breed,string photolocate)
-            : base(Name,Age,Gender, AnimalType.Dogs,photolocate)
+        public Dog(string Name, double Age,string Gender, string breed,string photolocate,Guid id)
+            : base(Name,Age,Gender, AnimalType.Dogs,photolocate, id)
         {
             Breed = breed;
         }

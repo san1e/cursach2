@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class LoginForm : Form
     {
-
+        public static string username;
         private Button RegisterBtn = new Button();
 
         public LinkLabel linklabel2 = new LinkLabel();
@@ -57,6 +57,9 @@ namespace WindowsFormsApp1
                             if ((role == "USER" && userRadioButton.Checked) || (role == "ADMIN" && sponsorRadioButton.Checked))
                             {
                                 isAuthorized = true;
+
+                                LoginForm.username = username; // Сохраняем имя пользователя
+
                                 if (role == "USER")
                                 {
                                     AdoptingForm adoptForm = new AdoptingForm("User");

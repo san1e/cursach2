@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Model\Animals\AnimalType.cs" />
     <Compile Include="Model\Animals\Hamster.cs" />
+    <Compile Include="Model\Animals\IIdentifiable.cs" />
     <Compile Include="Model\Animals\ITrainable.cs" />
     <Compile Include="Model\Expense.cs" />
     <Compile Include="View\AddForm.cs">
@@ -127,8 +128,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DogsPhoto\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

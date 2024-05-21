@@ -31,8 +31,8 @@
             this.AmountTxt = new System.Windows.Forms.TextBox();
             this.DescriptionTxt = new System.Windows.Forms.TextBox();
             this.AmountLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Donate = new System.Windows.Forms.Button();
+            this.DescriptionLbl = new System.Windows.Forms.Label();
+            this.DonateBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // AmountTxt
@@ -58,38 +58,37 @@
             this.AmountLbl.TabIndex = 2;
             this.AmountLbl.Text = "Amount";
             // 
-            // label1
+            // DescriptionLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(225, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Description";
+            this.DescriptionLbl.AutoSize = true;
+            this.DescriptionLbl.Location = new System.Drawing.Point(225, 23);
+            this.DescriptionLbl.Name = "DescriptionLbl";
+            this.DescriptionLbl.Size = new System.Drawing.Size(60, 13);
+            this.DescriptionLbl.TabIndex = 3;
+            this.DescriptionLbl.Text = "Description";
             // 
-            // Donate
+            // DonateBtn
             // 
-            this.Donate.Location = new System.Drawing.Point(128, 75);
-            this.Donate.Name = "Donate";
-            this.Donate.Size = new System.Drawing.Size(75, 23);
-            this.Donate.TabIndex = 4;
-            this.Donate.Text = "Donate";
-            this.Donate.UseVisualStyleBackColor = true;
-            this.Donate.Click += new System.EventHandler(this.Donate_Click);
+            this.DonateBtn.Location = new System.Drawing.Point(128, 75);
+            this.DonateBtn.Name = "DonateBtn";
+            this.DonateBtn.Size = new System.Drawing.Size(75, 23);
+            this.DonateBtn.TabIndex = 4;
+            this.DonateBtn.Text = "Donate";
+            this.DonateBtn.UseVisualStyleBackColor = true;
+            this.DonateBtn.Click += new System.EventHandler(this.Donate_Click);
             // 
             // DonationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(336, 110);
-            this.Controls.Add(this.Donate);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DonateBtn);
+            this.Controls.Add(this.DescriptionLbl);
             this.Controls.Add(this.AmountLbl);
             this.Controls.Add(this.DescriptionTxt);
             this.Controls.Add(this.AmountTxt);
             this.Name = "DonationForm";
             this.Text = "DonationForm";
-            this.Load += new System.EventHandler(this.DonationForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,7 +99,7 @@
         private System.Windows.Forms.TextBox AmountTxt;
         private System.Windows.Forms.TextBox DescriptionTxt;
         private System.Windows.Forms.Label AmountLbl;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Donate;
+        private System.Windows.Forms.Label DescriptionLbl;
+        private System.Windows.Forms.Button DonateBtn;
     }
 }

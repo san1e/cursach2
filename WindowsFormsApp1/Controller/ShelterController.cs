@@ -1,10 +1,13 @@
-﻿using System;
+﻿// ShelterController.cs
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.Animals;
 using WindowsFormsApp1.Model;
+using System.Windows.Forms;
+using WindowsFormsApp1.Model.Animals;
 
 namespace WindowsFormsApp1.Controller
 {
@@ -16,14 +19,16 @@ namespace WindowsFormsApp1.Controller
         {
             this.shelter = shelter;
             shelter.LoadAnimalsFromFile();
+            shelter.LoadDonationsFromFile();
+            shelter.LoadAnimalsFromFile();
             if (shelter.Animals.Count == 0)
             {
-                shelter.Animals.Add(new Dog("Sem", 3, "Male", "French", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\DogsPhoto\\1.jpg"));
-                shelter.Animals.Add(new Cat("Boni", 1, "Female", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\CatsPhoto\\1.png"));
-                shelter.Animals.Add(new Bird("Kesha", 0.4, "Female",""));
+                // Передайте Guid.NewGuid() для ID 
+                shelter.Animals.Add(new Dog("Sem", 3, "Male", "French", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\DogsPhoto\\1.jpg", Guid.NewGuid()));
+                shelter.Animals.Add(new Cat("Boni", 1, "Female", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\CatsPhoto\\1.png", Guid.NewGuid()));
+                shelter.Animals.Add(new Bird("Kesha", 0.4, "Female", "", Guid.NewGuid()));
             }
-            
-           
+            // ... (остальной код)
         }
         public List<Animal> Animals
         {
@@ -41,9 +46,14 @@ namespace WindowsFormsApp1.Controller
             shelter.SaveAnimalsToFile();
         }
 
-        public void AddExpense(string description, decimal amount)
+        public void AddExpense(string username, decimal amount, string description) // Добавлен параметр donorName
         {
-            shelter.AddExpense(description, amount);
+            shelter.AddExpense(description, amount, username); // Добавляем имя пользователя в Expense
+            shelter.SaveDonationsToFile(username, amount, description);
+        }
+        public List<Expense> GetDonations()
+        {
+            return shelter.Expenses;
         }
 
         public void RemoveExpense(Expense expense)
@@ -56,6 +66,27 @@ namespace WindowsFormsApp1.Controller
             shelter.MoreInformation(animal);
         }
 
+        public void AnimalPlay(Animal animal)
+        {
+            animal.Play();
+        }
+
+        public void TrainAnimal(Animal animal, string command)
+        {
+            if (animal is ITrainable trainableAnimal)
+            {
+                trainableAnimal.Train(command);
+            }
+            else
+            {
+                MessageBox.Show("This animal cannot be trained.");
+            }
+        }
+
+        public void AnimalFeed(Animal animal)
+        {
+            animal.Eat();
+        }
     }
 
 }

@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         public AdoptingForm(string UserType)
         {
             InitializeComponent();
-            shelterController = new ShelterController(new ShelterModel());
+            shelterController = new ShelterController(new ShelterModel(shelterController)); // Передаем shelterController
             CategoriesCmb.SelectedIndex = 0;
             GenderCmb.SelectedIndex = 0;
             AgesCmb.SelectedIndex = 0;
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
 
             foreach (Animal animal in filteredAnimals)
             {
-                AnimalsList.Items.Add(animal.ToString());
+                AnimalsList.Items.Add($"{animal.ToString()}; ID: {animal.Id}");
             }
         }
 
@@ -136,26 +136,20 @@ namespace WindowsFormsApp1
 
         private void DonateBtn_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the DonationForm
-            DonationForm donateForm = new DonationForm();
+            DonationForm donateForm = new DonationForm(shelterController, AdoptBtn.Text == "Remove");
 
-            // Show the form as a dialog to get the donation information from the user
             DialogResult result = donateForm.ShowDialog();
 
-            // Check if the user clicked the OK button on the donation form
-            if (result == DialogResult.OK)
+            if (result == DialogResult.OK && AdoptBtn.Text != "Remove")
             {
-                // Retrieve donation information from the donation form
                 decimal amount = donateForm.Amount;
                 string description = donateForm.Description;
 
-                // Add the donation as an expense to the shelter controller
-                shelterController.AddExpense(description, amount);
-
-                // Update the total donation display
+                shelterController.AddExpense(LoginForm.username, amount, description);
                 UpdateTotalDonation();
             }
         }
+
 
         private void MoreInfo_Click(object sender, EventArgs e)
         {
@@ -163,11 +157,11 @@ namespace WindowsFormsApp1
             {
                 int selectedIndex = AnimalsList.SelectedIndex;
                 Animal selectedAnimal = shelterController.Animals[selectedIndex];
-                shelterController.GetMoreInformation(selectedAnimal);
+                MoreInformation moreInfoForm = new MoreInformation(shelterController, selectedAnimal);
+                moreInfoForm.ShowDialog();
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Please select an animal to get more information.");
             }
         }
@@ -185,5 +179,7 @@ namespace WindowsFormsApp1
             // 4. Оновіть список тварин після закриття AddForm
             UpdateAnimalList();
         }
+
+        
     }
 }

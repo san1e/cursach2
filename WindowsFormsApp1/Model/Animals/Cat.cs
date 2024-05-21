@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp1.Model.Animals;
 
 namespace WindowsFormsApp1.Animals
 {
-    internal class Cat:Animal
+    internal class Cat:Animal, IIdentifiable
     {
-        public Cat(string name, double age,string Gender, string photolocate)
-       : base(name, age, Gender, AnimalType.Cats,photolocate)
+        public Cat(string name, double age,string Gender, string photolocate, Guid id)
+       : base(name, age, Gender, AnimalType.Cats,photolocate, id)
         {
            
         }
