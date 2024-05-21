@@ -42,8 +42,9 @@ namespace WindowsFormsApp1.View
 
             donationsListBox = new ListBox();
             donationsListBox.Dock = DockStyle.Fill;
-            Controls.Add(donationsListBox);
-
+            panel1.Size = new Size(450,200);
+            panel1.Controls.Add(donationsListBox);
+            this.Size = new Size(600,300);
             DisplayDonations();
         }
 
@@ -54,7 +55,7 @@ namespace WindowsFormsApp1.View
 
             foreach (Expense donation in donations)
             {
-                donationsListBox.Items.Add($"{donation.DonorName}, {donation.Amount:C}, {donation.Description}");
+                donationsListBox.Items.Add($"User: {donation.DonorName}; Amount: {donation.Amount:C}; Description: {donation.Description}");
             }
         }
 
@@ -71,6 +72,11 @@ namespace WindowsFormsApp1.View
             {
                 MessageBox.Show("Please enter a valid amount.");
             }
+        }
+
+        private void DonationForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

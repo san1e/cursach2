@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 
 namespace WindowsFormsApp1
@@ -23,8 +24,9 @@ namespace WindowsFormsApp1
             InitializeComponent();
             RegisterBtn.Click += new System.EventHandler(this.registerButton_Click);
             linklabel2.LinkClicked += new LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            
         }
-
+        
         private void loginButton_Click(object sender, EventArgs e)
         {
             string username = Login.Text;
@@ -135,24 +137,43 @@ namespace WindowsFormsApp1
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width / 2) - (this.Width / 2), (Screen.PrimaryScreen.Bounds.Height / 2) - (this.Height / 2));
         }
         public void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             loginButton.Visible = false;
-            RegisterBtn.Location = new Point(112, 214);
+            RegisterBtn.Location = new Point(126, 283);
+            RegisterBtn.Size = new Size(104, 31);
             RegisterBtn.Text = "REGISTER";
-            Controls.Add(RegisterBtn);
+            panel1.Controls.Add(RegisterBtn);
             linkLabel1.Visible = false;
             linklabel2.Text = "Login";
-            linklabel2.Location = new Point(125, 240);
-            Controls.Add(linklabel2 );
+            linklabel2.Location = new Point(160, 317);
+            panel1.Controls.Add(linklabel2 );
+            
         }
 
         public void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             linkLabel1.Visible = true;
             loginButton.Visible = true;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                Password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                Password.UseSystemPasswordChar = true ;
+            }
         }
     }
 }

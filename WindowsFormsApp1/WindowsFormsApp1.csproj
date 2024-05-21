@@ -128,6 +128,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\vivid-blurred-colorful-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Без имени-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Без имени.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v960-ning-30.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\273.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\596.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OAK41E0.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

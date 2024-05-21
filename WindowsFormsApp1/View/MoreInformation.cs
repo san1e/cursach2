@@ -32,9 +32,7 @@ namespace WindowsFormsApp1.View
             IdLbl.Text = $"ID: {animal.Id}";
 
             CommandCmb.Items.AddRange(new string[] { "Sit", "Stay", "Fetch" }); // Добавьте команды
-            CommandCmb.Location = new Point(CommandBtn.Location.X, CommandBtn.Location.Y + CommandBtn.Height + 5);
             CommandCmb.Visible = false; // Сначала не видна
-            Controls.Add(CommandCmb);
 
             // Определяем видимость CommandBtn и CommandCmb в зависимости от типа животного
             UpdateCommandVisibility();
