@@ -4,19 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model;
 using WindowsFormsApp1.Model.Animals;
 
 namespace WindowsFormsApp1.Animals
 {
-    internal class Dog:Animal,ITrainable, IIdentifiable
+    public class Dog:Animal,ITrainable, IIdentifiable, IBreedable
     {
-        public string Breed { get; private set; }
+        
 
         public Dog(string Name, double Age,string Gender, string breed,string photolocate,Guid id)
-            : base(Name,Age,Gender, AnimalType.Dogs,photolocate, id)
+            : base(Name,Age,Gender,breed, AnimalType.Dogs,photolocate, id)
         {
-            Breed = breed;
         }
+        public List<string> Breeds => new List<string>()
+    {
+        "Labrador Retriever",
+        "Golden Retriever",
+        "German Shepherd",
+        "Bulldog",
+        "Poodle",
+        // ... (Другие породы собак)
+    };
         public override string GetDescription()
         {
             return $"This is a {Gender} {Type} named {Name}, {Age} years old, breed {Breed}. Enjoys walks and fetching.";

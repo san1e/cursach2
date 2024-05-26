@@ -66,11 +66,13 @@ namespace WindowsFormsApp1
                                 {
                                     AdoptingForm adoptForm = new AdoptingForm("User");
                                     adoptForm.Show();
+                                    this.Hide();
                                 }
                                 else if (role == "ADMIN")
                                 {
                                     AdoptingForm adoptForm = new AdoptingForm("Admin");
                                     adoptForm.Show();
+                                    this.Hide();
                                 }
                                 break;
                             }

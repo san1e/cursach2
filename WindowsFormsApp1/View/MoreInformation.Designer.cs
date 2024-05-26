@@ -33,13 +33,14 @@
             this.TypeLbl = new System.Windows.Forms.Label();
             this.GenderLbl = new System.Windows.Forms.Label();
             this.Desc = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.PlayBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.CommandBtn = new System.Windows.Forms.Button();
             this.IdLbl = new System.Windows.Forms.Label();
             this.CommandCmb = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BreedLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,21 +83,21 @@
             // Desc
             // 
             this.Desc.AutoSize = true;
-            this.Desc.Location = new System.Drawing.Point(218, 150);
+            this.Desc.Location = new System.Drawing.Point(218, 191);
             this.Desc.Name = "Desc";
             this.Desc.Size = new System.Drawing.Size(90, 18);
             this.Desc.TabIndex = 5;
             this.Desc.Text = "Description:";
             // 
-            // button1
+            // PlayBtn
             // 
-            this.button1.Location = new System.Drawing.Point(4, 290);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 37);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Play";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.PlayBtn.Location = new System.Drawing.Point(4, 290);
+            this.PlayBtn.Name = "PlayBtn";
+            this.PlayBtn.Size = new System.Drawing.Size(55, 37);
+            this.PlayBtn.TabIndex = 6;
+            this.PlayBtn.Text = "Play";
+            this.PlayBtn.UseVisualStyleBackColor = true;
+            this.PlayBtn.Click += new System.EventHandler(this.PlayBtn_Click);
             // 
             // button2
             // 
@@ -106,7 +107,7 @@
             this.button2.TabIndex = 7;
             this.button2.Text = "Feed";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.FeedBtn_Click);
             // 
             // CommandBtn
             // 
@@ -116,7 +117,7 @@
             this.CommandBtn.TabIndex = 8;
             this.CommandBtn.Text = "Command";
             this.CommandBtn.UseVisualStyleBackColor = true;
-            this.CommandBtn.Click += new System.EventHandler(this.button3_Click);
+            this.CommandBtn.Click += new System.EventHandler(this.TrainBtn_Click);
             // 
             // IdLbl
             // 
@@ -143,16 +144,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.BreedLbl);
             this.panel1.Controls.Add(this.CommandCmb);
             this.panel1.Controls.Add(this.IdLbl);
             this.panel1.Controls.Add(this.CommandBtn);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.PlayBtn);
             this.panel1.Controls.Add(this.Desc);
             this.panel1.Controls.Add(this.GenderLbl);
             this.panel1.Controls.Add(this.TypeLbl);
@@ -165,6 +166,15 @@
             this.panel1.Size = new System.Drawing.Size(422, 364);
             this.panel1.TabIndex = 11;
             // 
+            // BreedLbl
+            // 
+            this.BreedLbl.AutoSize = true;
+            this.BreedLbl.Location = new System.Drawing.Point(218, 153);
+            this.BreedLbl.Name = "BreedLbl";
+            this.BreedLbl.Size = new System.Drawing.Size(51, 18);
+            this.BreedLbl.TabIndex = 11;
+            this.BreedLbl.Text = "Breed:";
+            // 
             // MoreInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +185,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MoreInformation";
             this.Text = "MoreInformation";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MoreInformation_FormClosed);
             this.Load += new System.EventHandler(this.MoreInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -191,11 +202,12 @@
         private System.Windows.Forms.Label TypeLbl;
         private System.Windows.Forms.Label GenderLbl;
         private System.Windows.Forms.Label Desc;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PlayBtn;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button CommandBtn;
         private System.Windows.Forms.Label IdLbl;
         private System.Windows.Forms.ComboBox CommandCmb;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label BreedLbl;
     }
 }

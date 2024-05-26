@@ -67,16 +67,16 @@ namespace WindowsFormsApp1.Model
                     switch (type)
                     {
                         case "Cat":
-                            animal = new Cat(name, age, gender, photoLocate, id);
+                            animal = new Cat(name, age, gender,breed, photoLocate, id);
                             break;
                         case "Dog":
                             animal = new Dog(name, age, gender, breed, photoLocate, id);
                             break;
                         case "Hamster":
-                            animal = new Hamster(name, age, gender, photoLocate, id);
+                            animal = new Hamster(name, age, gender,breed, photoLocate, id);
                             break;
                         case "Bird":
-                            animal = new Bird(name, age, gender, photoLocate, id);
+                            animal = new Bird(name, age, gender, breed, photoLocate, id);
                             break;
                         default:
                             continue; // Пропустити невідомий тип

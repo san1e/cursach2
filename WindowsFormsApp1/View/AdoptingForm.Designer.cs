@@ -58,10 +58,10 @@
             this.CategoriesCmb.FormattingEnabled = true;
             this.CategoriesCmb.Items.AddRange(new object[] {
             "All",
-            "Cats",
-            "Dogs",
-            "Hamsters",
-            "Others"});
+            "Cat",
+            "Dog",
+            "Hamster",
+            "Bird"});
             this.CategoriesCmb.Location = new System.Drawing.Point(98, 21);
             this.CategoriesCmb.Name = "CategoriesCmb";
             this.CategoriesCmb.Size = new System.Drawing.Size(121, 26);
@@ -203,6 +203,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "AdoptingForm";
             this.Text = "AdoptingForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdoptingForm_FormClosed);
             this.Load += new System.EventHandler(this.AdoptingForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

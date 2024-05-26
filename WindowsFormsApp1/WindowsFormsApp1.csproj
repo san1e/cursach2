@@ -51,6 +51,7 @@
     <Compile Include="Model\Animals\IIdentifiable.cs" />
     <Compile Include="Model\Animals\ITrainable.cs" />
     <Compile Include="Model\Expense.cs" />
+    <Compile Include="Model\Animals\IBreedable.cs" />
     <Compile Include="View\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>

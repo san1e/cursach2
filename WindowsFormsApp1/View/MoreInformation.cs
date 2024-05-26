@@ -25,6 +25,7 @@ namespace WindowsFormsApp1.View
             NameLbl.Text = $"Name: {animal.Name}";
             AgeLbl.Text = $"Age: {animal.Age}";
             GenderLbl.Text = $"Gender: {animal.Gender}";
+            BreedLbl.Text = $"Breed: {animal.Breed}";
             Desc.Text = $"Description: {animal.GetDescription()}";
             Desc.MaximumSize = new Size(200, 200);
             pictureBox1.ImageLocation = animal.PhotoLocate;
@@ -53,19 +54,16 @@ namespace WindowsFormsApp1.View
         }
         private void MoreInformation_Load(object sender, EventArgs e)
         {
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width / 2) - (this.Width / 2), (Screen.PrimaryScreen.Bounds.Height / 2) - (this.Height / 2));
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void PlayBtn_Click(object sender, EventArgs e)
         {
             shelterController.AnimalPlay(animal1);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void TrainBtn_Click(object sender, EventArgs e)
         {
             if (animal1 is Dog)
             {
@@ -74,9 +72,13 @@ namespace WindowsFormsApp1.View
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void FeedBtn_Click(object sender, EventArgs e)
         {
             shelterController.AnimalFeed(animal1);
+        }
+
+        private void MoreInformation_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

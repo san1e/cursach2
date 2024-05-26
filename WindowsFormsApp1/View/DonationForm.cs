@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Controller;
 using WindowsFormsApp1.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1.View
 {
@@ -73,10 +74,22 @@ namespace WindowsFormsApp1.View
                 MessageBox.Show("Please enter a valid amount.");
             }
         }
+        private void Amount_TextChanged(object sender, EventArgs e)
+        {
+            // Удаляем все символы, кроме цифр
+            string newText = new string(AmountTxt.Text.Where(c => char.IsDigit(c)).ToArray());
+            AmountTxt.Text = newText;
 
+            // Устанавливаем курсор в конец текстового поля
+            AmountTxt.SelectionStart = AmountTxt.Text.Length;
+        }
         private void DonationForm_Load(object sender, EventArgs e)
         {
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width / 2) - (this.Width / 2), (Screen.PrimaryScreen.Bounds.Height / 2) - (this.Height / 2));
+        }
 
+        private void DonationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

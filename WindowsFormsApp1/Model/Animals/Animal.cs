@@ -15,14 +15,15 @@ namespace WindowsFormsApp1.Animals
         public double Age { get; set; }
         public string Gender { get;set; }
         public AnimalType Type { get; protected set; }
-
+        public string Breed { get; private set; }
         public string PhotoLocate { get; set; }
 
-        protected Animal(string name, double age, string gender, AnimalType type, string photoLocate, Guid id)
+        protected Animal(string name, double age, string gender,string breed, AnimalType type, string photoLocate, Guid id)
         {
             Name = name;
             Age = age;
             Gender = gender;
+            Breed = breed;
             Type = type;
             PhotoLocate = photoLocate;
             Id = id;
@@ -41,11 +42,11 @@ namespace WindowsFormsApp1.Animals
         public virtual void Play()
         {
             MessageBox.Show($"{Name} is playing.");
-        }
+        } 
 
         public override string ToString()
         {
-            return $"{Name}, Age: {Age}, Gender: {Gender}";
+            return $"{Name}; Age: {Age}; Gender: {Gender}; Breed: {Breed}";
         }
     }
 

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Animals;
 using WindowsFormsApp1.Controller;
+using WindowsFormsApp1.Model.Animals;
 
 namespace WindowsFormsApp1.View
 {
@@ -25,6 +26,8 @@ namespace WindowsFormsApp1.View
         {
             InitializeComponent();
             pictureBox1.Visible = false;
+            AnimalType.SelectedIndex = 0;
+            UpdateBreedComboBox();
         }
 
         private void BrowseBtn_Click(object sender, EventArgs e)
@@ -52,12 +55,48 @@ namespace WindowsFormsApp1.View
 
         private void AddForm_Load(object sender, EventArgs e)
         {
-
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width / 2) - (this.Width / 2), (Screen.PrimaryScreen.Bounds.Height / 2) - (this.Height / 2));
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void UpdateBreedComboBox()
         {
-            string name = Name.Text;
+            breedComboBox.Items.Clear(); // Очищаем breedComboBox
+            breedComboBox.Text = "";
+            // Получаем текущий тип животного из комбобокса
+            string selectedAnimalType = AnimalType.SelectedItem?.ToString() ?? "";
+
+            // Если выбранный тип реализует IBreedable, то обновляем список пород
+            if (selectedAnimalType == "Dog" || selectedAnimalType == "Cat" || selectedAnimalType == "Hamster" || selectedAnimalType == "Bird")
+            {
+                Type animalType = Type.GetType($"WindowsFormsApp1.Animals.{selectedAnimalType}");
+                if (animalType != null)
+                {
+                    // Используем рефлексию, чтобы создать экземпляр выбранного типа
+                    // Передаем все необходимые параметры конструктора
+                    IBreedable animal = (IBreedable)Activator.CreateInstance(animalType,
+                        null, // имя
+                        0, // возраст
+                        null, // пол
+                        null, // порода
+                        null, // путь к фото
+                        Guid.Empty // ID
+                    );
+
+                    // Добавляем породы в breedComboBox
+                    breedComboBox.Items.AddRange(animal.Breeds.ToArray());
+
+                    breedComboBox.Enabled = true;
+                }
+            }
+            else
+            {
+                breedComboBox.Enabled = false;
+            }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            string name = NameTxt.Text;
             double age;
             if (!double.TryParse(Age.Text, out age))
             {
@@ -66,24 +105,24 @@ namespace WindowsFormsApp1.View
             }
             string gender = GenderCmb.SelectedItem?.ToString() ?? "";
             string type = AnimalType.SelectedItem?.ToString() ?? "";
-            string breed = BreedTxt.Text; // Отримайте породу, якщо це собака
+            string breed = breedComboBox.SelectedItem?.ToString() ?? ""; // Отримайте породу, якщо це собака
 
             // 2. Створіть нову тварину, вибравши правильний тип
             Animal newAnimal;
             switch (type)
             {
-                case "Cats":
+                case "Cat":
                     // НЕ генерируем новый ID, а используем уже существующий
-                    newAnimal = new Cat(name, age, gender, SelectedImagePath, Guid.NewGuid());
+                    newAnimal = new Cat(name, age, gender, breed, SelectedImagePath, Guid.NewGuid());
                     break;
-                case "Dogs":
+                case "Dog":
                     newAnimal = new Dog(name, age, gender, breed, SelectedImagePath, Guid.NewGuid());
                     break;
-                case "Hamsters":
-                    newAnimal = new Hamster(name, age, gender, SelectedImagePath, Guid.NewGuid());
+                case "Hamster":
+                    newAnimal = new Hamster(name, age, gender, breed, SelectedImagePath, Guid.NewGuid());
                     break;
-                case "Others":
-                    newAnimal = new Bird(name, age, gender, SelectedImagePath, Guid.NewGuid());
+                case "Bird":
+                    newAnimal = new Bird(name, age, gender, breed, SelectedImagePath, Guid.NewGuid());
                     break;
                 default:
                     MessageBox.Show("Please select a valid animal type.");
@@ -95,6 +134,19 @@ namespace WindowsFormsApp1.View
 
             // 4. Закрийте форму
             this.Close();
+        }
+        private void AnimalType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateBreedComboBox();
+        }
+        private void Age_TextChanged(object sender, EventArgs e)
+        {
+            // Удаляем все символы, кроме цифр
+            string newText = new string(Age.Text.Where(c => char.IsDigit(c)).ToArray());
+            Age.Text = newText;
+
+            // Устанавливаем курсор в конец текстового поля
+            Age.SelectionStart = Age.Text.Length;
         }
     }
 }

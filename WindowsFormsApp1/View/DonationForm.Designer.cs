@@ -43,6 +43,7 @@
             this.AmountTxt.Name = "AmountTxt";
             this.AmountTxt.Size = new System.Drawing.Size(100, 23);
             this.AmountTxt.TabIndex = 0;
+            this.AmountTxt.TextChanged += new System.EventHandler(this.Amount_TextChanged);
             // 
             // DescriptionTxt
             // 
@@ -103,6 +104,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "DonationForm";
             this.Text = "DonationForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DonationForm_FormClosed);
             this.Load += new System.EventHandler(this.DonationForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

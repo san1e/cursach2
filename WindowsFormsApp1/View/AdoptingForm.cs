@@ -60,10 +60,10 @@ namespace WindowsFormsApp1
 
             var filteredAnimals = shelterController.Animals
                 .Where(a => (CategoriesCmb.SelectedItem.ToString() == "All" ||
-                             (a is Cat && CategoriesCmb.SelectedItem.ToString() == "Cats") ||
-                             (a is Dog && CategoriesCmb.SelectedItem.ToString() == "Dogs") ||
-                             (a is Hamster && CategoriesCmb.SelectedItem.ToString() == "Hamsters") ||
-                             (!(a is Cat) && !(a is Dog) && !(a is Hamster) && CategoriesCmb.SelectedItem.ToString() == "Others")))
+                             (a is Cat && CategoriesCmb.SelectedItem.ToString() == "Cat") ||
+                             (a is Dog && CategoriesCmb.SelectedItem.ToString() == "Dog") ||
+                             (a is Hamster && CategoriesCmb.SelectedItem.ToString() == "Hamster") ||
+                             (!(a is Cat) && !(a is Dog) && !(a is Hamster) && CategoriesCmb.SelectedItem.ToString() == "Bird")))
                 .Where(a => GenderCmb.SelectedItem.ToString() == "All" || a.Gender == GenderCmb.SelectedItem.ToString())
                 .Where(a => AgeFilter(a));
 
@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
 
         private void AdoptingForm_Load(object sender, EventArgs e)
         {
-
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width / 2) - (this.Width / 2), (Screen.PrimaryScreen.Bounds.Height / 2) - (this.Height / 2));
         }
 
         private void AdoptBtn_Click(object sender, EventArgs e)
@@ -175,11 +175,15 @@ namespace WindowsFormsApp1
 
             // 3. Відкрийте AddForm як діалог 
             addForm.ShowDialog();
-
             // 4. Оновіть список тварин після закриття AddForm
             UpdateAnimalList();
         }
 
-        
+        private void AdoptingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+            LoginForm log = new LoginForm();
+            log.Show();
+        }
     }
 }
