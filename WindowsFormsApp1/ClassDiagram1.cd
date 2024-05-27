@@ -1,31 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="WindowsFormsApp1.Animals.Animal">
-    <Position X="8.75" Y="1.75" Width="1.5" />
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAACAAAAEAAAAACEIEAEAAQAAAAAAAAAgQAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAEAAAAACEIEAEAAQAAAAAAAAAgQAAAAIAAAA=</HashCode>
       <FileName>Model\Animals\Animal.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WindowsFormsApp1.Animals.Bird">
-    <Position X="8" Y="5.25" Width="1.5" />
+    <Position X="4" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Model\Animals\Bird.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WindowsFormsApp1.Animals.Cat">
-    <Position X="11.5" Y="5.25" Width="1.5" />
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAIAAAA=</HashCode>
       <FileName>Model\Animals\Cat.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WindowsFormsApp1.Animals.Dog">
-    <Position X="9.75" Y="5.25" Width="1.5" />
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAEIAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Model\Animals\Dog.cs</FileName>
@@ -33,85 +49,132 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WindowsFormsApp1.Animals.Hamster">
-    <Position X="6.25" Y="5.25" Width="1.5" />
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Model\Animals\Hamster.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="WindowsFormsApp1.Model.Expense">
-    <Position X="10.5" Y="0.5" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAACAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Expense.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp1.Model.ShelterModel">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAAAQABAQAAAkAAAAAQAgAYAEAgAAJAA=</HashCode>
+      <HashCode>CAAAAAAAAAAIAAAQABAQQAAkAAAAAQAgAYAECgAAJAA=</HashCode>
       <FileName>Model\ShelterModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp1.Controller.ShelterController">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Position X="2.25" Y="8" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAACgAAAAIAAAABBAQAAAEAAAAAAAAAIAkAAAAAAA=</HashCode>
+      <HashCode>AAAAACgAAgAIAAAABBAQAAAEAAAAAAAAAIAkAAAAAAA=</HashCode>
       <FileName>Controller\ShelterController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp1.View.AddForm">
-    <Position X="9.25" Y="7.75" Width="1.5" />
+    <Position X="4" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>ACABQAAAACAAAJAACECAAAQCAAAIAAAAEEAQAAFAAAA=</HashCode>
+      <HashCode>ACABQEAAACAAAJAEAECAAAAGAAAAACAAEABQAYFEAAA=</HashCode>
       <FileName>View\AddForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp1.AdoptingForm">
-    <Position X="4" Y="7.75" Width="1.5" />
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>ACAAAASUBCQQBBAQAACAAQAiACAgEAAAgAABBACAAAA=</HashCode>
+      <HashCode>ACAAAASUBCQQBBAQAACCAQAiACAgEAAAgAABBQCAAAA=</HashCode>
       <FileName>View\AdoptingForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp1.View.DonationForm">
-    <Position X="11" Y="7.75" Width="1.5" />
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>ABAAAAAQACgggBEQAACAAACSAAAAAAAAAAAAAACEAAA=</HashCode>
+      <HashCode>AAAAAAAQACgghAEQAACAIACCAAAAcAAAAAAAAQCAAAA=</HashCode>
       <FileName>View\DonationForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp1.LoginForm">
-    <Position X="0.5" Y="7.75" Width="1.5" />
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAgASAABgAAAgSAAAACAAhkAAACCAgQAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAgASAABgEAAgSAAAECAAhkAAACCAgQAQFAAAA=</HashCode>
       <FileName>View\LoginForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="WindowsFormsApp1.View.MoreInformation">
-    <Position X="5.75" Y="7.75" Width="1.5" />
+    <Position X="5.75" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAgAIAAAACAAQEoQAECAAAACAAAYBAAAAHAAQABBAAE=</HashCode>
+      <HashCode>IAgAIAAAACAAQEoQAECAAIACAAAQDAAAAAAAQRBFAAE=</HashCode>
       <FileName>View\MoreInformation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="WindowsFormsApp1.Model.Animals.IIdentifiable" Collapsed="true">
-    <Position X="5.75" Y="2.25" Width="1.5" />
+    <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Animals\IIdentifiable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="WindowsFormsApp1.Model.Animals.ITrainable" Collapsed="true">
-    <Position X="4" Y="2.25" Width="1.5" />
+    <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Animals\ITrainable.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="WindowsFormsApp1.Model.Animals.IBreedable" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Model\Animals\IBreedable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="WindowsFormsApp1.Animals.AnimalType">
-    <Position X="7" Y="0.5" Width="1.5" />
+    <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAABACAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Animals\AnimalType.cs</FileName>

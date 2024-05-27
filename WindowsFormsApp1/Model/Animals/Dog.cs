@@ -40,5 +40,10 @@ namespace WindowsFormsApp1.Animals
         {
             return $"Dog: {base.ToString()}";
         }
+
+        public override void Play()
+        {
+            MessageBox.Show($"{Name} is trying to catch a stick.");
+        }
     }
 }

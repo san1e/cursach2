@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WindowsFormsApp1.Model.Animals;
 
 namespace WindowsFormsApp1.Animals
@@ -24,6 +25,16 @@ namespace WindowsFormsApp1.Animals
         public override string ToString()
         {
             return $"Hamster: {base.ToString()}";
+        }
+
+        public override string GetDescription()
+        {
+            return $"Meet {Name}, an energetic and curious {Type} ready to find a loving home. {Name} is about {Age} years old and loves to explore his surroundings and run on his wheel.";
+        }
+
+        public override void Play()
+        {
+            MessageBox.Show($"{Name} is runing in a wheel");
         }
     }
 }
