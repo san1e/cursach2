@@ -24,9 +24,9 @@ namespace WindowsFormsApp1.Controller
             if (shelter.Animals.Count == 0)
             {
                 // Передайте Guid.NewGuid() для ID 
-                shelter.Animals.Add(new Dog("Sem", 3, "Male", "French", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\DogsPhoto\\1.jpg", Guid.NewGuid()));
+                shelter.Animals.Add(new Dog("Sem", 0.3, "Male", "French", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\DogsPhoto\\1.jpg", Guid.NewGuid()));
                 shelter.Animals.Add(new Cat("Boni", 1, "Female", "Siamese", "E:\\WindowsFormsApp1\\WindowsFormsApp1\\CatsPhoto\\1.png", Guid.NewGuid()));
-                shelter.Animals.Add(new Bird("Kesha", 0.4, "Female", "Canary", "", Guid.NewGuid()));
+                shelter.Animals.Add(new Bird("Kesha", 4, "Female", "Canary", "", Guid.NewGuid()));
                 shelter.Animals.Add(new Hamster("Tyson", 1, "Male", "Syrian Hamster", "", Guid.NewGuid()));
             }
             // ... (остальной код)
