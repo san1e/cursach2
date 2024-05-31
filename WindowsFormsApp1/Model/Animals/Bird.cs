@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model.Animals;
+using WindowsFormsApp1.View;
 
 namespace WindowsFormsApp1.Animals
 {
@@ -22,6 +23,11 @@ namespace WindowsFormsApp1.Animals
             "Finch",
             // ... (Другие породы птиц)
         };
+
+        public override void SetupMoreInfoControls(MoreInformation form)
+        {
+            form.CommandBtn.Visible = false;
+        }
         public override string ToString()
         {
             return $"Bird: {base.ToString()}";

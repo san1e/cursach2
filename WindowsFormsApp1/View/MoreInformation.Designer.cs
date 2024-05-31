@@ -204,9 +204,9 @@
         private System.Windows.Forms.Label Desc;
         private System.Windows.Forms.Button PlayBtn;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button CommandBtn;
+        public System.Windows.Forms.Button CommandBtn;
         private System.Windows.Forms.Label IdLbl;
-        private System.Windows.Forms.ComboBox CommandCmb;
+        public System.Windows.Forms.ComboBox CommandCmb;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label BreedLbl;
     }

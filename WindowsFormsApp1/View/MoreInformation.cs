@@ -47,29 +47,14 @@ namespace WindowsFormsApp1.View
             CommandCmb.Items.AddRange(new string[] { "Sit", "Stay", "Fetch" });
             // Приховування комбобоксу
             CommandCmb.Visible = false;
-
+            animal1.SetupMoreInfoControls(this);
             // Оновлення видимості кнопки "Навчити" та комбобоксу в залежності від типу тварини
-            UpdateCommandVisibility();
+            //UpdateCommandVisibility();
 
         }
 
         // Метод для оновлення видимості кнопки "Навчити" та комбобоксу
-        private void UpdateCommandVisibility()
-        {
-            // Перевірка, чи тварина є собакою
-            if (animal1 is Dog)
-            {
-                // Якщо так, то показуємо кнопку "Навчити" та комбобокс
-                CommandBtn.Visible = true;
-                CommandCmb.Visible = true;
-            }
-            else
-            {
-                // Якщо ні, то приховуємо кнопку "Навчити" та комбобокс
-                CommandBtn.Visible = false;
-                CommandCmb.Visible = false;
-            }
-        }
+       
 
         // Обробник події завантаження форми
         private void MoreInformation_Load(object sender, EventArgs e)

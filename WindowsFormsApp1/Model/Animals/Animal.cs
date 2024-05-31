@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model.Animals;
+using WindowsFormsApp1.View;
 
 namespace WindowsFormsApp1.Animals
 {
     public abstract class Animal: IIdentifiable
     {
+        public abstract void SetupMoreInfoControls(MoreInformation form);
         public Guid Id { get; private set; }
         public string Name { get; set; }
         public double Age { get; set; }
